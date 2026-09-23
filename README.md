@@ -2,11 +2,13 @@
 
 Aevonix's experimental serving recipe for **MiMo V2.6 Pro RL on eight DGX Sparks**. Includes the runtime patches, DFlash configuration, build source and test results.
 
-![Normal MiMo: measured native and DFlash performance, with output agreement and task scores](assets/normal-results.png)
+![MiMo throughput: individual prose and structured-extraction requests, with background-load labels](assets/workload-results.png)
 
-The chart records the original async-on comparison: the **same patched runtime**, with DFlash off and on, across four long structured-output tasks.
+Prose measured **13.9–24.4 output tokens/s** across six requests. Four shared the endpoint with background inference. The two prose requests with no other inference observed measured **24.4** and **20.0 tokens/s**. Earlier structured extraction measured **68.1 tokens/s**. These are workload observations, not an isolated comparison.
 
-The default now disables async scheduling following a mixed-workload CUDA failure. This configuration passed the new mixed-request checks and averaged **68.1 tokens/s** on two long tasks. The original crash cause remains unconfirmed; unattended reliability is not established. [Results and limits](docs/results.md).
+The earlier **3.84×** native/DFlash comparison covered structured extraction only. There is no matched native prose baseline yet. [Captured outputs, timings and limits](docs/results.md).
+
+Async scheduling is disabled following a mixed-workload CUDA failure. The new configuration passed finite mixed-request checks; the original crash cause and long unattended reliability remain unconfirmed.
 
 ## Model
 

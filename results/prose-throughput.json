@@ -1,0 +1,319 @@
+{
+  "schema": 1,
+  "date_utc": "2026-09-23",
+  "model": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+  "weight_revision": "73875d00b30a89ef8cc353a0b60b0e9f9561952d",
+  "profile": "DFlash K7, async scheduling disabled, TP8, eight DGX Sparks, official checkpoint, unchanged v0.1.1 numerical overlays",
+  "cases": [
+    {
+      "id": "explanation",
+      "repeat": 1,
+      "prompt_sha256": "cc7799116e5b433f7104a4245c395137047e243025a29ce8e1f406aa8f5d722a",
+      "request": {
+        "model": "mimo-v2.6-pro-rl",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Write about 650 words of continuous prose explaining why a hot metal spoon and a wooden spoon in the same bowl of soup feel different to touch. Connect heat conduction, thermal capacity, contact with skin, and what changes as the soup cools. Make the explanation understandable to an interested adult without a science background. Include the limitations of the explanation and an everyday example beyond spoons. Use paragraphs, not headings, bullet points, equations, tables, lists, or code. Do not repeat the same point to reach the requested length."
+          }
+        ],
+        "temperature": 0,
+        "seed": 20260922,
+        "max_tokens": 2048,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "cache_salt": "prose-20260923-0-explanation"
+      },
+      "content": "When you dip a metal spoon and a wooden spoon into the same bowl of hot soup, the metal spoon feels much hotter to the touch than the wooden one. This difference is not because the spoons are at different temperatures; in fact, after sitting in the soup for a while, both spoons will be at almost exactly the same temperature as the soup itself. The difference in how they feel is a result of how quickly they can move heat energy into your skin, a process known as heat conduction.\n\nThink of heat as a form of energy that always tries to move from a warmer object to a cooler one. Your hand is cooler than the hot soup and the spoons, so when you touch a spoon, heat energy begins to flow from the spoon into your skin. The speed of this transfer is what your body senses as temperature. Metal is an excellent conductor of heat. Its internal structure allows heat energy to pass through it very quickly and efficiently. When you touch the metal spoon, it rapidly pulls heat from the soup and dumps it into your fingertips. This sudden, intense rush of energy is interpreted by your brain as \"very hot.\" Wood, on the other hand, is a poor conductor, or an insulator. Its structure is much better at holding onto heat and passing it along slowly. When you touch the wooden spoon, the heat transfer is gradual and gentle. Your skin warms up slowly, so the sensation is one of warmth rather than a sharp, burning heat.\n\nAnother factor at play is thermal capacity, which is the amount of heat energy an object can store. A metal spoon, being dense and heavy for its size, can hold a significant amount of heat energy. This large reservoir of energy means it can continue to feed heat into your hand for a longer time before it cools down noticeably. A wooden spoon is less dense and has a lower thermal capacity. It stores less heat energy overall. As it gives up some of its heat to your hand, its own temperature drops more quickly than the metal spoon's would. This is why, if you hold both spoons, the metal one will feel hot for a sustained period, while the wooden one might start to feel less warm more quickly.\n\nThe nature of the contact with your skin is also crucial. Your fingertips are very sensitive to the rate of heat flow. The metal spoon, with its high conductivity, creates a high rate of heat flow into your skin, triggering a strong \"hot\" signal. The wooden spoon creates a low rate of heat flow, resulting in a much milder sensation. This is why you can comfortably stir soup with a wooden spoon but would quickly drop a metal one if you held it in the hot liquid for too long.\n\nAs the soup cools, the temperature of both spoons will drop along with it. The difference in sensation will become less dramatic. When the soup is lukewarm, the metal spoon will still feel cooler or warmer than the wood to the touch because it is still conducting heat (or lack of it) more effectively, but the effect is far less pronounced. The intense rush of heat is gone because the temperature difference between the spoon and your hand is much smaller.\n\nThis explanation has its limits. It assumes the spoons are solid and uniform, but a spoon with a hollow handle or a plastic coating would behave differently. It also doesn't account for the fact that your hand itself warms up the surface it is touching, slightly reducing the temperature difference over time. The sensation is also subjective; what one person finds uncomfortably hot, another might find merely warm.\n\nAn everyday example beyond spoons is the feeling of a tiled floor versus a carpeted one in the same room. On a cool morning, both the tile and the carpet are at the same room temperature. However, the tile floor feels much colder under your bare feet. This is because the tile is a good conductor and rapidly pulls heat away from your skin, while the carpet is an insulator and allows your feet to stay warm. The principle is identical to that of the spoons in the soup: it is not the temperature of the object itself, but its ability to conduct heat away from or into your body that determines how it feels to the touch.",
+      "content_sha256": "8fac5aa6f6194639956f1e04b0da60a459dcbf3c3284803212a4b183e64c3fe5",
+      "usage": {
+        "prompt_tokens": 118,
+        "total_tokens": 973,
+        "completion_tokens": 855,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_s": 34.9904525000602,
+      "first_model_output_s": 0.3593221250921488,
+      "first_visible_output_s": 0.3593221250921488,
+      "e2e_output_tokens_per_s": 24.43523701211149,
+      "word_count": 750,
+      "complete": true,
+      "load": {
+        "observed_peak_running": 1.0,
+        "observed_peak_waiting": 0.0,
+        "observed_success_counter_delta": 1.0,
+        "sample_count": 59,
+        "sampling_interval_s": 0.5
+      },
+      "quality_note": "Natural completion of prose, not an accuracy or writing-quality score."
+    },
+    {
+      "id": "narrative",
+      "repeat": 1,
+      "prompt_sha256": "287420f0a4f930b607dbef177eade9c4fa60a6c332f75c3085a0d44a8f56efd6",
+      "request": {
+        "model": "mimo-v2.6-pro-rl",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Write an original short story of about 650 words. A retired bridge inspector takes the last ferry across a reservoir to return an ordinary borrowed object. During the crossing, a conversation with the ferryman changes the inspector's understanding of a decision made many years earlier. Keep the stakes personal rather than catastrophic. Use concrete sensory details, believable dialogue, and an ending that resolves the immediate situation without explaining its moral. Write only the story in paragraphs, without a title, headings, numbered sections, or a preface."
+          }
+        ],
+        "temperature": 0,
+        "seed": 20260922,
+        "max_tokens": 2048,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "cache_salt": "prose-20260923-0-narrative"
+      },
+      "content": "The last ferry of the day groaned away from the concrete dock, its engine a low thrum that vibrated up through the soles of Arthur\u2019s shoes. He clutched the thermos in his lap, its familiar dented steel cool against his palms. It was a simple thing, borrowed from his old foreman, Bill, who lived in one of the few houses left on the far side of the reservoir. Returning it felt like closing a book he\u2019d left open for thirty years.\n\nThe water was a sheet of hammered pewter, reflecting the bruised purple of the evening sky. Arthur, a man who had spent his life listening to the language of steel and concrete, found the silence of the water unnerving. He\u2019d inspected bridges, not ferries. Bridges were about tension and compression, about forces you could calculate and counter. Water was just\u2026 there. It yielded, and it swallowed.\n\nThe ferryman, a man with a face like a worn leather satchel, leaned against the wheelhouse. \u201cQuiet tonight,\u201d he said, his voice a gravelly rumble.\n\n\u201cLast one across,\u201d Arthur replied, stating the obvious.\n\n\u201cAlways is,\u201d the ferryman said. He gestured with his chin toward the thermos. \u201cImportant delivery?\u201d\n\nArthur looked down at the object. \u201cJust returning something. A thermos.\u201d\n\nThe ferryman nodded slowly. \u201cI remember when they built this dam. Drowned a whole valley. A town, a church, a few farms. People thought it was a fair trade. Power for a place. Water for a future.\u201d He spat a stream of tobacco juice over the side. \u201cFunny thing is, the water doesn\u2019t care about the trade. It just fills the space you give it.\u201d\n\nArthur felt a familiar knot tighten in his gut. \u201cI was the lead inspector on the dam\u2019s spillway bridge,\u201d he said, the words feeling heavy and old. \u201cThirty years ago.\u201d\n\n\u201cIs that so,\u201d the ferryman said, his eyes on the darkening horizon. \u201cGood bridge?\u201d\n\n\u201cIt was,\u201d Arthur said. \u201cSolid. But there was a flaw. A micro-fracture in one of the main support pylons. Not critical. Not then. But it was there. I saw it in the stress reports.\u201d\n\nHe paused, the memory as clear as the cold air on his face. He\u2019d been a young man, eager to prove himself. The project was behind schedule, over budget. The chief engineer, a man with a politician\u2019s smile, had called it a statistical anomaly. A ghost in the machine. He\u2019d told Arthur to sign off, to trust the math, to not be the man who held up progress for a phantom.\n\n\u201cI signed the report,\u201d Arthur said, his voice barely a whisper. \u201cI said it was sound.\u201d\n\nThe ferryman was quiet for a long time, the only sound the chug of the engine and the gentle lapping of water against the hull. The lights of the far shore were beginning to prick the darkness.\n\n\u201cWater finds the cracks,\u201d the ferryman said finally. \u201cDoesn\u2019t matter how small. It works at them. Year after year. A bridge is a promise to hold something up. A dam is a promise to hold something back. But the water\u2026 the water just keeps its own promise. To find a way through.\u201d\n\nHe looked at Arthur, his gaze not accusatory, but deeply knowing. \u201cYou didn\u2019t make the crack, friend. You just saw it. The water\u2019s the one that does the work.\u201d\n\nThe ferry bumped against the far dock with a soft thud. The journey was over. Arthur stood up, his legs stiff. He walked to the edge and handed the thermos to the ferryman, who passed it to a waiting figure on the dock\u2014Bill, silhouetted against a single porch light.\n\n\u201cThanks for the ride,\u201d Arthur said.\n\nThe ferryman just nodded, his hand already on the lever to reverse the engine. Arthur stepped onto the solid, unmoving ground of the shore. He didn\u2019t look back at the water, but he could feel its immense, patient weight behind him, a presence that had been there all along, waiting for him to understand its language.",
+      "content_sha256": "200c2a8c9226be415c8eb994980beb9a2a07295ef395807f7374b38883a8e6e6",
+      "usage": {
+        "prompt_tokens": 113,
+        "total_tokens": 980,
+        "completion_tokens": 867,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_s": 43.43129458394833,
+      "first_model_output_s": 0.37084112502634525,
+      "first_visible_output_s": 0.37084112502634525,
+      "e2e_output_tokens_per_s": 19.962564052153134,
+      "word_count": 665,
+      "complete": true,
+      "load": {
+        "observed_peak_running": 1.0,
+        "observed_peak_waiting": 0.0,
+        "observed_success_counter_delta": 1.0,
+        "sample_count": 75,
+        "sampling_interval_s": 0.5
+      },
+      "quality_note": "Natural completion of prose, not an accuracy or writing-quality score."
+    },
+    {
+      "id": "analysis",
+      "repeat": 1,
+      "prompt_sha256": "0d253a5e657680032d9055c1f82fd024f0c130da089186cf0b80852b6a4d2865",
+      "request": {
+        "model": "mimo-v2.6-pro-rl",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Write about 650 words of prose advising a small town deciding whether to replace its hourly fixed-route evening bus with an on-demand minibus. The current service averages six passengers per trip but is relied on by hospital shift workers. An on-demand pilot served more trips overall, but riders without smartphones reported difficulties, the longest waits occurred after the last train, and operating costs were not consistently recorded. The town has one year of funding and cannot hire more drivers. Explain the tradeoffs, what the pilot does and does not demonstrate, a practical decision for the next year, and evidence that would change your recommendation. Distinguish facts supplied here from assumptions. Do not invent statistics or citations. Use connected paragraphs without headings, lists, tables, or code."
+          }
+        ],
+        "temperature": 0,
+        "seed": 20260922,
+        "max_tokens": 2048,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "cache_salt": "prose-20260923-0-analysis"
+      },
+      "content": "The decision before the town is not simply whether to replace a fixed-route evening bus with an on-demand minibus, but how to balance reliability for a small group of essential riders against the possibility of serving more people overall. The facts supplied are limited but important. The current fixed-route service averages six passengers per trip and is relied on by hospital shift workers. The on-demand pilot served more trips overall, but riders without smartphones reported difficulties, the longest waits occurred after the last train, and operating costs were not consistently recorded. The town has one year of funding and cannot hire more drivers. These facts point to a real tradeoff: the fixed route offers predictable timing and a clear path to the hospital, while on-demand service can reach more riders and potentially reduce empty travel, but it introduces variability and access barriers.\n\nWhat the pilot does demonstrate is that demand exists and that flexible service can attract more trips than the current fixed route. It also shows that the service is not equally accessible to everyone; the smartphone requirement created friction for some riders. The timing of the longest waits after the last train suggests a mismatch between service design and the arrival of late travelers, which is a predictable peak that a fixed route can cover with a known schedule. What the pilot does not demonstrate is whether it is cheaper to operate than the fixed route, because operating costs were not consistently recorded. It also does not show whether the extra trips translate into better outcomes for hospital shift workers, who need dependable arrival and departure times more than they need a high total number of trips. Nor does it show whether the on-demand model can be run without additional drivers, since the town cannot hire more staff and the pilot\u2019s staffing pattern is not described.\n\nGiven one year of funding and no ability to add drivers, a practical approach is to keep the fixed route as the backbone for the evening period and use the minibus to fill gaps rather than replace the route outright. In practice, this means preserving the fixed schedule for the hours when hospital shifts change and for the window immediately after the last train, when waits were longest in the pilot. Outside those windows, the minibus can operate on-demand to cover scattered trips and reach riders who are not near the fixed route. To address the smartphone barrier, the town should accept phone reservations and allow walk-up requests at a staffed stop or via a simple call-in number. This hybrid keeps the predictable service that hospital workers rely on while capturing the broader reach that the pilot showed is possible. It also limits risk: if the on-demand component underperforms, the fixed route still protects the core need.\n\nThis recommendation rests on several assumptions that are not established by the facts provided. We assume that the fixed route\u2019s schedule aligns with hospital shift changes and that its path serves the hospital directly. We assume that the minibus can be dispatched without adding drivers by consolidating trips and using the same staff in a different pattern. We assume that a call-in option can be staffed within existing resources and that the town can record operating costs consistently going forward. We also assume that the extra trips in the pilot were not concentrated in a way that would make a fixed route inefficient at those times. These assumptions should be tested during the year.\n\nEvidence that would change the recommendation includes consistent cost data showing that on-demand service is cheaper per trip without harming reliability for hospital workers, or that the fixed route\u2019s six-passenger average masks large peaks that on-demand can serve more efficiently. If the town can demonstrate that a call-in and walk-up system eliminates the smartphone barrier and that dispatch can be handled without more drivers, a fuller shift to on-demand becomes more attractive. Conversely, if late-night waits persist even with targeted coverage after the last train, or if hospital workers report missed shifts due to variability, the fixed route should remain dominant. The goal for the next year is to protect the riders who depend on predictable service while learning, with better data, whether flexibility can be expanded without leaving anyone behind.",
+      "content_sha256": "cd22265236e6bb75b0d57e548976a036500e3d9522b85deb3bb0bc451477b4ea",
+      "usage": {
+        "prompt_tokens": 160,
+        "total_tokens": 958,
+        "completion_tokens": 798,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_s": 36.41411091608461,
+      "first_model_output_s": 0.3943643330130726,
+      "first_visible_output_s": 0.3943643330130726,
+      "e2e_output_tokens_per_s": 21.914581460988316,
+      "word_count": 710,
+      "complete": true,
+      "load": {
+        "observed_peak_running": 2.0,
+        "observed_peak_waiting": 0.0,
+        "observed_success_counter_delta": 1.0,
+        "sample_count": 63,
+        "sampling_interval_s": 0.5
+      },
+      "quality_note": "Natural completion of prose, not an accuracy or writing-quality score."
+    },
+    {
+      "id": "explanation",
+      "repeat": 2,
+      "prompt_sha256": "cc7799116e5b433f7104a4245c395137047e243025a29ce8e1f406aa8f5d722a",
+      "request": {
+        "model": "mimo-v2.6-pro-rl",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Write about 650 words of continuous prose explaining why a hot metal spoon and a wooden spoon in the same bowl of soup feel different to touch. Connect heat conduction, thermal capacity, contact with skin, and what changes as the soup cools. Make the explanation understandable to an interested adult without a science background. Include the limitations of the explanation and an everyday example beyond spoons. Use paragraphs, not headings, bullet points, equations, tables, lists, or code. Do not repeat the same point to reach the requested length."
+          }
+        ],
+        "temperature": 0,
+        "seed": 20260922,
+        "max_tokens": 2048,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "cache_salt": "prose-20260923-1-explanation"
+      },
+      "content": "When you dip a metal spoon and a wooden spoon into the same bowl of hot soup, the metal spoon quickly feels much hotter to the touch than the wooden one. This difference is not because the spoons are at different temperatures; in fact, after sitting in the soup for a while, both spoons will be at almost exactly the same temperature as the soup itself. The difference in how they feel is a result of how quickly they can move heat energy into your skin, a property known as thermal conductivity.\n\nMetal is an excellent conductor of heat. This means it is very good at transferring thermal energy from one place to another. When you touch the hot metal spoon, it rapidly pulls heat from the soup and transfers it directly into your hand. Your skin is sensitive to the *rate* of heat flow, not the absolute temperature. Because the metal spoon is so efficient at moving heat, it delivers a large amount of energy to your skin in a very short time. Your brain interprets this rapid influx of energy as a sharp, intense feeling of heat, which can even feel like a burn.\n\nWood, on the other hand, is a poor conductor of heat, or a good insulator. Its structure is not as effective at passing thermal energy along. When you touch the wooden spoon, it also transfers heat to your hand, but it does so much more slowly. The rate of heat flow is low. Because the energy trickles into your skin rather than flooding it, your brain registers a much gentler, less intense sensation of warmth. The wooden spoon feels comfortable to hold precisely because it is inefficient at transferring the soup's heat to you.\n\nAnother factor at play is thermal capacity, which is the amount of heat energy an object can store. A solid metal spoon and a solid wooden spoon of similar size might have different thermal capacities, but this is a secondary effect in this scenario. The primary reason for the different sensations is the rate of transfer. However, thermal capacity becomes more important as the soup cools. As the soup loses heat to the surrounding air, its temperature drops. Both spoons will cool down along with it. Because the metal spoon is a good conductor, it will also lose its heat to the air more quickly than the wooden spoon. This means that as the soup cools, the metal spoon\u2019s temperature might drop slightly faster, but the fundamental difference in how it feels to touch will remain. The metal will still feel hotter than the wood at any given moment because it will still be transferring heat to your hand more rapidly.\n\nThis explanation has its limitations. It assumes the spoons are of a similar size and shape and have been in the soup for long enough to reach the soup's temperature. It also simplifies the complex process of heat transfer, which involves conduction through the spoon, convection in the soup, and radiation from the surfaces. Furthermore, the sensation of \"hot\" or \"cold\" is a neurological perception, and individual sensitivity can vary.\n\nAn everyday example beyond spoons is the feeling of stepping onto a tiled floor versus a carpeted floor in the same room. On a cool morning, both the tile and the carpet are at the same room temperature. However, the tile floor feels much colder under your bare feet. This is because tile is a good conductor and rapidly draws heat away from your skin, while the carpet is a poor conductor and allows your feet to retain their warmth. The sensation is not about the floor's temperature, but about how quickly it steals your body's heat.",
+      "content_sha256": "003590a58b8ec01a5d808b85eb3f7aa4aff1d7a71638d829facfa9e8416304e7",
+      "usage": {
+        "prompt_tokens": 118,
+        "total_tokens": 829,
+        "completion_tokens": 711,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_s": 39.6021810839884,
+      "first_model_output_s": 0.42837295902427286,
+      "first_visible_output_s": 0.42837295902427286,
+      "e2e_output_tokens_per_s": 17.953556610735898,
+      "word_count": 618,
+      "complete": true,
+      "load": {
+        "observed_peak_running": 2.0,
+        "observed_peak_waiting": 0.0,
+        "observed_success_counter_delta": 1.0,
+        "sample_count": 68,
+        "sampling_interval_s": 0.5
+      },
+      "quality_note": "Natural completion of prose, not an accuracy or writing-quality score."
+    },
+    {
+      "id": "narrative",
+      "repeat": 2,
+      "prompt_sha256": "287420f0a4f930b607dbef177eade9c4fa60a6c332f75c3085a0d44a8f56efd6",
+      "request": {
+        "model": "mimo-v2.6-pro-rl",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Write an original short story of about 650 words. A retired bridge inspector takes the last ferry across a reservoir to return an ordinary borrowed object. During the crossing, a conversation with the ferryman changes the inspector's understanding of a decision made many years earlier. Keep the stakes personal rather than catastrophic. Use concrete sensory details, believable dialogue, and an ending that resolves the immediate situation without explaining its moral. Write only the story in paragraphs, without a title, headings, numbered sections, or a preface."
+          }
+        ],
+        "temperature": 0,
+        "seed": 20260922,
+        "max_tokens": 2048,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "cache_salt": "prose-20260923-1-narrative"
+      },
+      "content": "The last ferry of the day groaned away from the concrete dock, its engine a low thrum that vibrated up through the soles of Arthur\u2019s shoes. He clutched the thermos in his coat pocket, its familiar weight a small, solid anchor in the vast, grey evening. The reservoir stretched out on all sides, its surface like hammered pewter under a bruised sky. He was returning a borrowed object, a simple thing, but the journey felt heavier than it should.\n\nThe ferryman, a man with a face as weathered as the boat\u2019s wooden gunwales, leaned against the wheelhouse. \u201cCold one,\u201d he said, his voice a gravelly rumble. \u201cWind\u2019s got teeth tonight.\u201d\n\nArthur nodded, pulling his collar tighter. \u201cIt does.\u201d He watched the wake churn behind them, a fleeting scar on the water\u2019s surface.\n\n\u201cHeading over to the old town site?\u201d the ferryman asked, his eyes on the distant, tree-lined shore.\n\n\u201cJust to the Millers\u2019 place. Returning a thermos.\u201d Arthur patted his pocket. \u201cBorrowed it for a fishing trip last week.\u201d\n\nThe ferryman grunted. \u201cGood of you. Most folks just keep things. Or forget.\u201d He was silent for a moment, steering the boat with a practiced hand. \u201cYou know, this water\u2026 it covers a whole world. Roads, houses, the old stone bridge. My grandad used to fish from that bridge. Said the trout were so thick you could almost walk on their backs.\u201d\n\nArthur felt a familiar, dull ache in his chest. \u201cI know the bridge,\u201d he said quietly. \u201cI was the inspector who signed the final report on it.\u201d\n\nThe ferryman turned his head, his gaze sharp and curious. \u201cIs that so? The one who said it had to go?\u201d\n\n\u201cIt was structurally unsound,\u201d Arthur said, the words tasting like dust. He\u2019d said them a thousand times in his head, a neat, professional justification. \u201cThe abutments were failing. The cost of repair was prohibitive. The new dam project made it redundant anyway.\u201d\n\n\u201cRedundant,\u201d the ferryman repeated, the word hanging in the cold air between them. He looked out at the water, as if he could see through it to the stone arches below. \u201cMy grandad didn\u2019t see it that way. He said a bridge isn\u2019t just for getting from one side to the other. It\u2019s a place to stand in the middle of things. A place to watch the water go by.\u201d\n\nArthur stared at the thermos in his pocket. He remembered the final inspection, the cold, precise calculations in his notebook. He remembered the feeling of finality as he\u2019d signed his name, a clean, decisive stroke of the pen. He had been so focused on the numbers, on the stress tolerances and the material fatigue, that he\u2019d forgotten to look at the bridge itself. He\u2019d forgotten it was a place where an old man could stand and fish.\n\n\u201cIt was a good bridge,\u201d the ferryman said softly, turning back to the wheel. \u201cStrong stone. It held a lot of memories, not just cars.\u201d\n\nThe ferry bumped against the far dock with a gentle thud. The engine cut out, and the sudden silence was profound, broken only by the lapping of water against the hull. Arthur stepped onto the solid ground, the thermos feeling suddenly trivial in his hand. He turned to pay the ferryman.\n\nThe man waved a dismissive hand. \u201cNo charge. Not for the last run.\u201d He looked at Arthur, his expression unreadable. \u201cYou get that thermos back where it belongs.\u201d\n\nArthur walked up the path toward the Miller\u2019s house, the borrowed thermos in his hand feeling like a stone. He had returned the object, but he knew he was carrying something else away with him, something he couldn\u2019t leave on the dock.",
+      "content_sha256": "f3b8c889525f738c24b923b22881b955b605dca47ef0faacab771ad06089597b",
+      "usage": {
+        "prompt_tokens": 113,
+        "total_tokens": 915,
+        "completion_tokens": 802,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_s": 57.771664416999556,
+      "first_model_output_s": 0.4017647090367973,
+      "first_visible_output_s": 0.4017647090367973,
+      "e2e_output_tokens_per_s": 13.882238084939234,
+      "word_count": 614,
+      "complete": true,
+      "load": {
+        "observed_peak_running": 2.0,
+        "observed_peak_waiting": 0.0,
+        "observed_success_counter_delta": 1.0,
+        "sample_count": 99,
+        "sampling_interval_s": 0.5
+      },
+      "quality_note": "Natural completion of prose, not an accuracy or writing-quality score."
+    },
+    {
+      "id": "analysis",
+      "repeat": 2,
+      "prompt_sha256": "0d253a5e657680032d9055c1f82fd024f0c130da089186cf0b80852b6a4d2865",
+      "request": {
+        "model": "mimo-v2.6-pro-rl",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Write about 650 words of prose advising a small town deciding whether to replace its hourly fixed-route evening bus with an on-demand minibus. The current service averages six passengers per trip but is relied on by hospital shift workers. An on-demand pilot served more trips overall, but riders without smartphones reported difficulties, the longest waits occurred after the last train, and operating costs were not consistently recorded. The town has one year of funding and cannot hire more drivers. Explain the tradeoffs, what the pilot does and does not demonstrate, a practical decision for the next year, and evidence that would change your recommendation. Distinguish facts supplied here from assumptions. Do not invent statistics or citations. Use connected paragraphs without headings, lists, tables, or code."
+          }
+        ],
+        "temperature": 0,
+        "seed": 20260922,
+        "max_tokens": 2048,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "cache_salt": "prose-20260923-1-analysis"
+      },
+      "content": "The decision before the town is not simply whether to replace a fixed-route evening bus with an on-demand minibus, but how to weigh reliability for a small group of essential riders against broader access and uncertain costs. The facts supplied are limited but important. The current fixed-route service averages six passengers per trip and is relied on by hospital shift workers. The on-demand pilot served more trips overall, but riders without smartphones reported difficulties, the longest waits occurred after the last train, and operating costs were not consistently recorded. The town has one year of funding and cannot hire more drivers. These facts frame the tradeoffs; they do not resolve them.\n\nThe fixed-route service offers predictability. For hospital shift workers, a known departure time and route can be the difference between getting home safely and waiting in the cold after a long shift. The low average of six passengers per trip suggests the service is not crowded, but it does not tell us whether those six are the same riders each night or whether the route is essential to a few people at critical times. The on-demand pilot\u2019s higher number of trips suggests it reached more people or better matched demand, but it does not demonstrate that it served the hospital workers reliably. The pilot\u2019s difficulties for riders without smartphones are a concrete equity concern. The longest waits after the last train indicate a mismatch between demand peaks and available capacity or dispatching, especially at a time when alternatives are scarce. The inconsistent recording of operating costs means we cannot yet compare the two options on cost-effectiveness or budget impact.\n\nWhat the pilot does demonstrate is that demand exists beyond the fixed route\u2019s current reach and that flexible service can generate more trips. What it does not demonstrate is that it can meet the needs of riders who lack smartphones, that it can provide dependable service at the most sensitive times, or that it is cheaper or even cost-neutral. It also does not show whether the higher trip count reflects short, easy trips that are less costly to serve, or whether it masks longer, more complex journeys that strain a single-driver operation. With one year of funding and no ability to add drivers, the town must avoid a model that creates unpredictable workloads or requires more staff to maintain service quality.\n\nA practical decision for the next year is to keep the fixed-route evening bus as the backbone for hospital shift workers and to run a tightly defined on-demand pilot alongside it, not as a replacement. Use the fixed route to guarantee departures at the times hospital shifts end and to cover the period after the last train when waits were longest in the pilot. Offer on-demand service for other evening travel, but include non-smartphone booking options, such as a phone line and a simple paper or kiosk request process, and set a maximum wait time that the town commits to meeting. Record operating costs consistently from day one, including driver time, vehicle use, fuel, maintenance, and any dispatching overhead. This approach preserves the reliability that vulnerable riders depend on while testing whether on-demand can expand access without undermining equity or blowing the budget.\n\nEvidence that would change this recommendation includes clear data showing that on-demand can meet a defined maximum wait time after the last train without additional drivers, and that it can serve riders without smartphones at rates comparable to smartphone users. If consistent cost records show on-demand is less expensive per trip and per rider while maintaining reliability for hospital workers, a shift toward on-demand becomes more attractive. Conversely, if the fixed route\u2019s six passengers per trip are predominantly hospital staff at critical times and on-demand cannot match that reliability, the case for keeping the fixed route strengthens. The town should also watch for signs that on-demand trip growth is driven by short, low-need journeys that crowd out essential trips. Until these questions are answered with consistent data, the balanced path is to keep the fixed route for core needs and to refine on-demand as a complement, not a replacement.",
+      "content_sha256": "885bbfb0b70719e89456e1952ec3d87bfe8cf87ba9742f8c4aded23ada2cf7e2",
+      "usage": {
+        "prompt_tokens": 160,
+        "total_tokens": 939,
+        "completion_tokens": 779,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_s": 35.781663374975324,
+      "first_model_output_s": 0.4268892080290243,
+      "first_visible_output_s": 0.4268892080290243,
+      "e2e_output_tokens_per_s": 21.77092752330822,
+      "word_count": 683,
+      "complete": true,
+      "load": {
+        "observed_peak_running": 2.0,
+        "observed_peak_waiting": 0.0,
+        "observed_success_counter_delta": 2.0,
+        "sample_count": 62,
+        "sampling_interval_s": 0.5
+      },
+      "quality_note": "Natural completion of prose, not an accuracy or writing-quality score."
+    }
+  ],
+  "limits": [
+    "Three prose prompts, two requests each; descriptive throughput sample, not a general benchmark.",
+    "One benchmark client against a live endpoint; background inference overlapped four of six requests.",
+    "Another eight-node cohort was loading weights concurrently; this is not isolated hardware testing.",
+    "No native prose measurements: do not infer prose speedup from the earlier structured extraction baseline.",
+    "Short prompts, temperature0, thinking disabled, max2048outputtokens.",
+    "All outputs stopped naturally. Output checks do not establish factual correctness or literary quality.",
+    "Responses differ between repeats despite greedy sampling; all captured outputs are included, none selected or discarded.",
+    "Explanatory output includes assumptions about spoon geometry and heat capacity; this was not a validated science-accuracy test."
+  ]
+}

@@ -6,6 +6,8 @@ Measured 2026-09-23 on eight DGX Sparks with the official normal checkpoint and 
 
 These measurements used async scheduling, as shipped in v0.1.0. They are unchanged by the later configuration update.
 
+![Historical structured-extraction comparison; this is not a prose speedup measurement](../assets/normal-results.png)
+
 | Long task | Output tokens | Native seconds | DFlash seconds | Speedup |
 | --- | ---: | ---: | ---: | ---: |
 | decode-0 | 1,829 | 102.631 | 26.593 | 3.859x |
@@ -60,6 +62,27 @@ The numerical overlays and weights stayed unchanged. These finite checks passed 
 The schema check emitted the exact 512-item integer sequence and stopped naturally. Its short request began after 484 output tokens and intentionally stopped at its one-token limit. Client overlap does not prove the exact scheduler geometry from the incident. The original crash has not been reproduced, so this is a configuration mitigation with regression evidence, not a proven causal fix or an unattended reliability claim.
 
 Captured synthetic answers and timings: [synchronous-validation.json](../results/synchronous-validation.json). These speculative-mode checks are not a new matched native/speculative comparison. The large-context witness above has not been repeated with this setting.
+
+## Prose throughput
+
+Three prompts, each run twice, on the current async-off DFlash K7 profile. Temperature 0, thinking disabled, maximum 2,048 output tokens; all six stopped naturally. One benchmark client used the live endpoint. Four requests overlapped background inference, and another cohort was loading weights. These are descriptive measurements, not an isolated performance comparison.
+
+| Prose task | Run | Output tokens | End-to-end TPS | First output | Observed running requests |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Explanation | 1 | 855 | 24.44 | 0.359 s | 1 |
+| Fiction | 1 | 867 | 19.96 | 0.371 s | 1 |
+| Analysis | 1 | 798 | 21.91 | 0.394 s | 2 |
+| Explanation | 2 | 711 | 17.95 | 0.428 s | 2 |
+| Fiction | 2 | 802 | 13.88 | 0.402 s | 2 |
+| Analysis | 2 | 779 | 21.77 | 0.427 s | 2 |
+
+All prompts, requests and answers are included in [prose-throughput.json](../results/prose-throughput.json). Responses differed between repeats despite greedy sampling. No result was discarded. Natural completion is not a factual-accuracy or writing-quality score; the science explanation includes assumptions about spoon geometry and heat capacity.
+
+There is **no matched native prose baseline**. Do not apply the structured-output 3.84× speedup to these results or divide these rates by the native structured-extraction rate. Prompt lengths, output lengths, scheduling and background load differ.
+
+```sh
+python -s scripts/plot_workloads.py
+```
 
 ## Reproduce the chart
 
