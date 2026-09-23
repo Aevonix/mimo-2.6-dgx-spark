@@ -36,6 +36,12 @@ The context witness used thinking enabled; its 262144 file label is a sizing tar
 
 Maximum configured context is 1,048,576 and the scheduler has 16 slots. Neither maximum was qualified. No claims are made for other GPU architectures, TP sizes, quantizations, model variants, sampled generation, multimodal input, agent integration or long unattended operation.
 
+## Subsequent runtime failure
+
+After the recorded checks, a mixed batch containing structured-output decoding and a newly admitted short request caused a fatal CUDA error on the head rank. The error surfaced during hidden-state selection; asynchronous CUDA reporting does not identify that operation as the cause. No OOM kill or GPU Xid was observed in the collected host diagnostics.
+
+The prior measured results remain unchanged. They did not establish reliability for this mixed workload. Investigation and a synthetic reproduction are pending; do not treat this recipe as qualified for unattended production.
+
 ## Reproduce the chart
 
 The graph is computed from the paired measurement JSON, not manually entered bar heights:

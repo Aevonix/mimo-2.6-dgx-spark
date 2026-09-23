@@ -6,6 +6,8 @@ Aevonix's experimental serving recipe for **MiMo V2.6 Pro RL on eight DGX Sparks
 
 The comparison uses the **same patched runtime**, with DFlash off and on. These are four long structured-output tasks, not a general speed guarantee or a comparison against stock vLLM.
 
+A subsequent mixed structured-output workload caused a fatal CUDA error. The cause is under investigation; this recipe is not yet qualified for unattended production. See [the incident note](docs/results.md#subsequent-runtime-failure).
+
 ## Model
 
 - [Official XiaomiMiMo weights](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL)
