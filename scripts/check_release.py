@@ -12,6 +12,7 @@ import tempfile
 
 sys.dont_write_bytecode = True
 from benchmark import exact, parsed_json
+from check_mixed_requests import body, schema_body, validate_response
 from install_overlays import install
 from launch import command
 
@@ -107,6 +108,28 @@ def main():
         passed += actual
     if len(answers) != 12 or passed != 10:
         raise AssertionError('Unexpected frozen score')
+    synchronous = json.loads((ROOT / 'results/synchronous-validation.json').read_text())
+    rescored = 0
+    for row in synchronous['frozen'] + synchronous['mixed_four_requests']:
+        if hashlib.sha256(row['content'].encode()).hexdigest() != row['content_sha256']:
+            raise AssertionError('Synchronous captured answer changed')
+        actual = row['finish_reason'] == 'stop' and exact(expected[row['id']], parsed_json(row['content']))
+        if not actual or actual != row['pass']:
+            raise AssertionError(f"Synchronous outcome differs: {row['id']}")
+        rescored += 1
+    for row in synchronous['mixed_schema_requests']:
+        if hashlib.sha256(row['content'].encode()).hexdigest() != row['content_sha256']:
+            raise AssertionError('Mixed captured answer changed')
+        if row['id'] in ('json', 'mixed-long'):
+            payload = schema_body('synthetic', items=512 if row['id'] == 'mixed-long' else 3)
+        else:
+            payload = body('synthetic', maximum=row.get('intentional_output_cap', 32))
+        validate_response(payload, row)
+        if row['pass'] is not True:
+            raise AssertionError('Mixed outcome differs')
+        rescored += 1
+    if rescored != 12 or '--no-async-scheduling' not in config['serve_arguments']:
+        raise AssertionError('Synchronous release evidence/config mismatch')
     if exact({'ok': True}, {'ok': 1}) or exact({'n': 7}, {'n': 7.0}):
         raise AssertionError('Scorer coerces JSON types')
     try:
@@ -116,9 +139,11 @@ def main():
     else:
         raise AssertionError('Scorer accepts duplicated fenced answers')
     subprocess.run([sys.executable, str(ROOT / 'whole-k/check_scheduler.py')], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'scripts/check_mixed_requests.py'), '--self-test'], check=True)
     print(json.dumps({'status': 'PASS', 'hashed_files': checked, 'overlays': len(manifest['overlays']),
                       'patches': len(originals), 'launcher_ranks': 8, 'captured_outcomes_reproduced': 12,
-                      'known_correct_answers': passed, 'gpu_inference_run': False}))
+                      'known_correct_answers': passed, 'synchronous_outcomes_reproduced': rescored,
+                      'gpu_inference_run': False}))
 
 
 if __name__ == '__main__':

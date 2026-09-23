@@ -96,7 +96,7 @@
     "--trust-remote-code",
     "--language-model-only",
     "--enable-ep-weight-filter",
-    "--async-scheduling",
+    "--no-async-scheduling",
     "--default-chat-template-kwargs",
     "{\"enable_thinking\":false}",
     "--kernel-config",

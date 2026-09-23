@@ -4,6 +4,8 @@ Measured 2026-09-23 on eight DGX Sparks with the official normal checkpoint and 
 
 ## Frozen native/speculative comparison
 
+These measurements used async scheduling, as shipped in v0.1.0. They are unchanged by the later configuration update.
+
 | Long task | Output tokens | Native seconds | DFlash seconds | Speedup |
 | --- | ---: | ---: | ---: | ---: |
 | decode-0 | 1,829 | 102.631 | 26.593 | 3.859x |
@@ -19,7 +21,7 @@ Sampling: temperature 0, seed 20260922, maximum 4,096 output tokens, thinking di
 
 Machine-readable paired measurements and output hashes: [normal-native-vs-speculative.json](../results/normal-native-vs-speculative.json). Captured visible answers, including failures: [normal-answers.json](../results/normal-answers.json). No private agent conversations are used. This small frozen collection is a regression witness, not a comprehensive intelligence benchmark.
 
-## Additional checks
+## Additional checks on the original profile
 
 | Check | Result |
 | --- | --- |
@@ -40,7 +42,24 @@ Maximum configured context is 1,048,576 and the scheduler has 16 slots. Neither 
 
 After the recorded checks, a mixed batch containing structured-output decoding and a newly admitted short request caused a fatal CUDA error on the head rank. The error surfaced during hidden-state selection; asynchronous CUDA reporting does not identify that operation as the cause. No OOM kill or GPU Xid was observed in the collected host diagnostics.
 
-The prior measured results remain unchanged. They did not establish reliability for this mixed workload. Investigation and a synthetic reproduction are pending; do not treat this recipe as qualified for unattended production.
+The prior measured results remain unchanged. They did not establish reliability for this mixed workload. The current default disables async scheduling, informed by [this Flash recipe](https://github.com/tonyd2wild/MiMo-V2.6-Flash-DGX-Spark-Recipe/tree/13621bb3cc6fd30a94d53609320599d1f1134686) and [the upstream Pro report](https://github.com/vllm-project/vllm/issues/46669). Neither proves the cause of our crash.
+
+## Synchronous scheduling checks
+
+The numerical overlays and weights stayed unchanged. These finite checks passed with `--no-async-scheduling`:
+
+| Check | Result |
+| --- | --- |
+| Two long extraction tasks | 1,829 tokens each; 26.78 and 26.92 seconds; **68.13 tokens/s** combined end-to-end |
+| Long-task first output | 0.98 and 0.96 seconds |
+| Resource planning task | Correct; 2.83 seconds |
+| Structured output plus new short request | Both complete; observed peak two requests |
+| Four-request mixed workload | 4/4 correct; observed peak four; long answer 33.10 seconds |
+| API contracts | 4/4 schema and tool-call checks; no tools executed |
+
+The schema check emitted the exact 512-item integer sequence and stopped naturally. Its short request began after 484 output tokens and intentionally stopped at its one-token limit. Client overlap does not prove the exact scheduler geometry from the incident. The original crash has not been reproduced, so this is a configuration mitigation with regression evidence, not a proven causal fix or an unattended reliability claim.
+
+Captured synthetic answers and timings: [synchronous-validation.json](../results/synchronous-validation.json). These speculative-mode checks are not a new matched native/speculative comparison. The large-context witness above has not been repeated with this setting.
 
 ## Reproduce the chart
 

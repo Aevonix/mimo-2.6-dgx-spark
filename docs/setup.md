@@ -1,6 +1,6 @@
 # Setup
 
-Use eight idle GB10/SM121 Sparks with enough free memory to load the model and KV cache. The tested recipe uses one rank per Spark, TP8, EP, BF16 KV, MXFP4 expert weights, Marlin, DFlash K7 and async scheduling. The vLLM image and source revision are pinned in `manifest.json`. This is a text-only recipe.
+Use eight idle GB10/SM121 Sparks with enough free memory to load the model and KV cache. The recipe uses one rank per Spark, TP8, EP, BF16 KV, MXFP4 expert weights, Marlin and DFlash K7. Async scheduling is disabled. The vLLM image and source revision are pinned in `manifest.json`. This is a text-only recipe.
 
 ## Weights
 
@@ -47,8 +47,12 @@ python3 scripts/benchmark.py --base-url http://YOUR_RANK_ZERO_ADDRESS:8000/v1 \
   --suite api --output local-results/api.jsonl
 python3 scripts/benchmark.py --base-url http://YOUR_RANK_ZERO_ADDRESS:8000/v1 \
   --suite context --output local-results/context.jsonl
+python3 scripts/check_mixed_requests.py --url http://YOUR_RANK_ZERO_ADDRESS:8000 \
+  --output local-results/mixed
 ```
 
 The frozen suite takes several minutes and deliberately retains the two known model mistakes. A nonzero exit reports any failure, including those known failures. Every JSONL row includes its outcome, usage, end-to-end latency and output hash. The streaming suite records first model output separately from first visible content; neither is inferred from total request duration. Set `MIMO_API_KEY` in the environment only when your endpoint requires it.
+
+The mixed check overlaps a long schema-constrained response with a short prefill after 482 output tokens. It checks completion, exact contents and overlap, and stops on failure. It exercises the workload class of the recorded crash; it does not reproduce its exact scheduler geometry. No server restart or configuration change is performed.
 
 Repeat the frozen suite under `--native` into a separate output file to compare complete content hashes case by case. An unchanged pass count can hide regressions; inspect each case. Keep model/revision, source manifest, sampling, fixtures and any changed network/runtime settings with your results.

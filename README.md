@@ -4,9 +4,9 @@ Aevonix's experimental serving recipe for **MiMo V2.6 Pro RL on eight DGX Sparks
 
 ![Normal MiMo: measured native and DFlash performance, with output agreement and task scores](assets/normal-results.png)
 
-The comparison uses the **same patched runtime**, with DFlash off and on. These are four long structured-output tasks, not a general speed guarantee or a comparison against stock vLLM.
+The chart records the original async-on comparison: the **same patched runtime**, with DFlash off and on, across four long structured-output tasks.
 
-A subsequent mixed structured-output workload caused a fatal CUDA error. The cause is under investigation; this recipe is not yet qualified for unattended production. See [the incident note](docs/results.md#subsequent-runtime-failure).
+The default now disables async scheduling following a mixed-workload CUDA failure. This configuration passed the new mixed-request checks and averaged **68.1 tokens/s** on two long tasks. The original crash cause remains unconfirmed; unattended reliability is not established. [Results and limits](docs/results.md).
 
 ## Model
 
@@ -20,8 +20,8 @@ No model weights are included or modified. This package targets the official che
 | Check | Observed result |
 | --- | --- |
 | Hardware | 8 × DGX Spark, GB10/SM121, TP8 with expert parallelism |
-| Long-context extraction | 257,531 input tokens; correct answer |
-| Mixed workload | Four simultaneous requests; 4/4 correct |
+| Long-context extraction | 257,531 input tokens; correct answer on the original async-on profile |
+| Mixed workload | Four simultaneous requests, 4/4 correct; overlapping schema/short requests also passed |
 | API contracts | 4/4 schema and tool-call checks; no tools executed |
 | Modalities | Text only |
 
