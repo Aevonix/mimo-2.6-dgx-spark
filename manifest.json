@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "model": {
+    "repository": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+    "revision": "73875d00b30a89ef8cc353a0b60b0e9f9561952d",
+    "draft_subdirectory": "dflash",
+    "served_name": "mimo-v2.6-pro-rl"
+  },
+  "runtime": {
+    "base_image": "vllm/vllm-openai@sha256:865784ba59b46e3e1370df8158c1bbff8769c3ab88d63551d3f25eabc1a61c45",
+    "base_image_id": "sha256:4d1d2cc1d6c2920f7408ac6704f8f6867675a528a4a9758abdd1647601d6ca1a",
+    "vllm_commit": "0961bbae2894d574be790d219651824eb199318e",
+    "vllm_version": "0.29.1rc1.dev513",
+    "torch": "2.13.0+cu130",
+    "architecture": "linux/arm64",
+    "gpu": "GB10 SM121"
+  },
+  "overlays": [
+    {
+      "source": "overlay/vllm/v1/attention/ops/triton_unified_attention_diffkv.py",
+      "target": "vllm/v1/attention/ops/triton_unified_attention_diffkv.py",
+      "sha256": "d3bcd747fe99720bf2b28feccd6fed3491be083088ad7ff83dc4bfcebccb7d67",
+      "kind": "runtime",
+      "original_sha256": "7fa36d7b7441f1c396e0348eac61d691d2e459e5c4c393c4aa262dfb670e68f7"
+    },
+    {
+      "source": "overlay/vllm/v1/worker/gpu/model_runner.py",
+      "target": "vllm/v1/worker/gpu/model_runner.py",
+      "sha256": "d2440c63ecfc4ecaaa4fe1eaa08b463c722b1bf59ba321cf7b9d39128abb17a7",
+      "kind": "diagnostic",
+      "original_sha256": "04ad516ab6dd3ac59f704c0d39654078db86f1605057a5c641642b754a7c5c39"
+    },
+    {
+      "source": "overlay/vllm/v1/worker/gpu/_mimo_spec_trace.py",
+      "target": "vllm/v1/worker/gpu/_mimo_spec_trace.py",
+      "sha256": "d37f2ca4732873550b06e1d8e04e4c47785454b54acd139651857b8def544791",
+      "kind": "diagnostic"
+    },
+    {
+      "source": "overlay/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py",
+      "target": "vllm/model_executor/layers/fused_moe/experts/marlin_moe.py",
+      "sha256": "efcbc1475e9811d6840ec6c6398c94ce738a32f3161ad71c6b4ab4fc38789560",
+      "kind": "runtime",
+      "original_sha256": "e048731e130ecc3100be0ab4a168777a7697131b41538f9d9b6a73c4f66e14ff"
+    },
+    {
+      "source": "overlay/vllm/model_executor/layers/fused_moe/experts/_mimo_whole_k.py",
+      "target": "vllm/model_executor/layers/fused_moe/experts/_mimo_whole_k.py",
+      "sha256": "f23329c48f31ce75289936ee5e11869b28f715cb9a20c85c8eafee157f3d56d9",
+      "kind": "runtime"
+    },
+    {
+      "source": "artifacts/mimo_marlin_whole_k_v1.so",
+      "target": "vllm/model_executor/layers/fused_moe/experts/mimo_marlin_whole_k_v1.so",
+      "sha256": "43d7889b9011cf7f39945e161c74842870de2d9b9a3f05ddca35314fcb8fd517",
+      "kind": "runtime"
+    },
+    {
+      "source": "overlay/vllm/model_executor/models/mimo_v2.py",
+      "target": "vllm/model_executor/models/mimo_v2.py",
+      "sha256": "5d1085ba6200c2d3b6935c8a2aa75cb309b434ed1146b934b76da61769891466",
+      "kind": "runtime",
+      "original_sha256": "ccf258c20b41689cd1593e793b707bc9b62ddfafd1ab18489b6168d1052ec805"
+    },
+    {
+      "source": "overlay/vllm/model_executor/models/_mimo_stable_row_layers.py",
+      "target": "vllm/model_executor/models/_mimo_stable_row_layers.py",
+      "sha256": "3fefdc7b57691d0b405ce181991e3ad708550c41c53b6e682068c70738805fac",
+      "kind": "runtime"
+    },
+    {
+      "source": "overlay/vllm/model_executor/models/_mimo_stable_dense.py",
+      "target": "vllm/model_executor/models/_mimo_stable_dense.py",
+      "sha256": "c96e4580f3ad159a60bc7f0d3045a7805dee14024ef238c83c29f2d73bb2b58e",
+      "kind": "runtime"
+    },
+    {
+      "source": "overlay/vllm/v1/worker/gpu/_mimo_prefill_boundaries.py",
+      "target": "vllm/v1/worker/gpu/_mimo_prefill_boundaries.py",
+      "sha256": "cba23307fd6713c9ef76549ea67f48aff59fc59cd640b675083ce4bb982dea4e",
+      "kind": "diagnostic"
+    }
+  ]
+}

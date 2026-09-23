@@ -1,0 +1,33 @@
+--- a/vllm/model_executor/models/mimo_v2.py
++++ b/vllm/model_executor/models/mimo_v2.py
+@@ -71,6 +71,11 @@
+     maybe_prefix,
+ )
+ 
++from ._mimo_stable_row_layers import (
++    StableMimoGateLinear,
++    install_stable_mimo_output,
++)
++
+ logger = init_logger(__name__)
+ 
+ 
+@@ -157,7 +162,8 @@
+ 
+         dtype = getattr(config, "moe_router_dtype", "float32")
+         self.gate_dtype = str_dtype_to_torch_dtype(dtype)
+-        self.gate = GateLinear(
++        gate_class = GateLinear if is_nextn else StableMimoGateLinear
++        self.gate = gate_class(
+             config.hidden_size,
+             config.n_routed_experts,
+             bias=False,
+@@ -278,6 +284,8 @@
+             reduce_results=True,
+             prefix=f"{prefix}.o_proj",
+         )
++        if "mtp.layers" not in prefix:
++            install_stable_mimo_output(self.o_proj)
+ 
+         self.rotary_emb = get_rope(
+             head_size=self.head_dim,

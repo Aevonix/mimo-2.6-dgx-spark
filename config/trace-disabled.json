@@ -1,0 +1,12 @@
+{
+  "output_directory": "/cache/mimo-trace/disabled",
+  "prompt_token_sha256": [
+    "0000000000000000000000000000000000000000000000000000000000000000"
+  ],
+  "max_output_positions": 192,
+  "output_start_position": 0,
+  "max_requests": 4,
+  "opaque_prefill": {
+    "enabled": false
+  }
+}

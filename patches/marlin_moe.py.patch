@@ -1,0 +1,132 @@
+--- a/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py
++++ b/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py
+@@ -6,6 +6,13 @@
+ from collections.abc import Callable
+ 
+ import torch
++
++from ._mimo_whole_k import (
++    moe_wna16_marlin_gemm as _mimo_whole_k_gemm,
++    verify_parent_source as _verify_mimo_whole_k_parent,
++)
++
++_verify_mimo_whole_k_parent(__file__)
+ 
+ import vllm._custom_ops as ops
+ import vllm.model_executor.layers.fused_moe.modular_kernel as mk
+@@ -57,6 +64,79 @@
+ from vllm.scalar_type import ScalarType, scalar_types
+ 
+ 
++# Canonicalization adapted from Apache-2.0 vLLM PR #52532 by bxchange.
++# https://github.com/vllm-project/vllm/pull/52532
++# Original head: e8a07dcccf8e48dd4b9b42a355fc6d5b9db59073
++def _canonicalize_marlin_moe_token_order(
++    sorted_token_ids: torch.Tensor,
++    expert_ids: torch.Tensor,
++    num_tokens_post_padded: torch.Tensor,
++    block_size_m: int,
++    num_valid_tokens: int,
++) -> torch.Tensor:
++    """Canonicalize routed token IDs within contiguous expert regions.
++
++    moe_align_block_size guarantees expert grouping but does not guarantee
++    token ordering within an expert. Marlin's multi-threadblock split-K
++    reduction can depend on physical block position, so equivalent routed
++    layouts need a common ordering before entering the kernel.
++
++    Alignment buffers may contain unspecified data after
++    num_tokens_post_padded. Keep that inactive tail strictly after the active
++    prefix so its contents cannot affect canonicalization.
++    """
++    block_experts = expert_ids.to(dtype=torch.int64)
++    block_positions = torch.arange(
++        expert_ids.numel(),
++        device=expert_ids.device,
++        dtype=torch.int64,
++    )
++    active_blocks = (
++        block_positions * block_size_m < num_tokens_post_padded
++    )
++
++    region_starts = torch.cat(
++        (
++            torch.ones_like(block_experts[:1], dtype=torch.bool),
++            (block_experts[1:] != block_experts[:-1])
++            | (active_blocks[1:] != active_blocks[:-1]),
++        ),
++        dim=0,
++    )
++    block_regions = (
++        torch.cumsum(region_starts.to(dtype=torch.int64), dim=0) - 1
++    )
++
++    slot_regions = torch.repeat_interleave(
++        block_regions,
++        block_size_m,
++    )[: sorted_token_ids.numel()]
++
++    slot_positions = torch.arange(
++        sorted_token_ids.numel(),
++        device=sorted_token_ids.device,
++        dtype=torch.int64,
++    )
++    active_slots = slot_positions < num_tokens_post_padded
++
++    token_ids = sorted_token_ids.to(dtype=torch.int64)
++    key_stride = num_valid_tokens + 1
++
++    # Valid token IDs are in [0, num_valid_tokens), with the padding sentinel
++    # at num_valid_tokens. Values in the inactive tail are unspecified, so do
++    # not let them contribute to the sort key.
++    token_key = torch.where(
++        active_slots,
++        token_ids,
++        torch.zeros_like(token_ids),
++    )
++    sort_key = slot_regions * key_stride + token_key
++
++    order = torch.argsort(sort_key)
++    return sorted_token_ids.index_select(0, order)
++
++
++
+ def _fused_marlin_moe(
+     hidden_states: torch.Tensor,
+     w1: torch.Tensor,
+@@ -128,7 +208,7 @@
+     elif input_dtype == torch.float8_e4m3fn:
+         gate_up_input, a_scales1 = marlin_quant_input(hidden_states, input_dtype)
+ 
+-    intermediate_cache1 = ops.moe_wna16_marlin_gemm(
++    intermediate_cache1 = _mimo_whole_k_gemm(
+         gate_up_input,
+         intermediate_cache1,
+         w1,
+@@ -192,7 +272,7 @@
+             intermediate_cache2, input_dtype
+         )
+ 
+-    output = ops.moe_wna16_marlin_gemm(
++    output = _mimo_whole_k_gemm(
+         intermediate_cache2,
+         output,
+         w2,
+@@ -354,6 +434,17 @@
+         ignore_invalid_experts=True,
+     )
+ 
++    # Private diagnostic candidate based on Apache-2.0 vLLM PR #52532.
++    # Stabilizes legal within-expert token order, not all batch-size effects.
++    if topk_ids.shape[0] > 1:
++        sorted_token_ids = _canonicalize_marlin_moe_token_order(
++            sorted_token_ids,
++            expert_ids,
++            num_tokens_post_padded,
++            block_size_m,
++            topk_ids.numel(),
++        )
++
+     assert activation is not None
+     moe_output = _fused_marlin_moe(
+         hidden_states=hidden_states,

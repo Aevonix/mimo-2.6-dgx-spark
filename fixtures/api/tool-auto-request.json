@@ -1,0 +1,43 @@
+{
+  "max_completion_tokens": 4096,
+  "messages": [
+    {
+      "content": "Call record_receipt with code spark-check-17 and count 7.",
+      "role": "user"
+    }
+  ],
+  "model": "mimo-v2.6-pro-rl",
+  "parallel_tool_calls": false,
+  "stream": false,
+  "temperature": 0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "function": {
+        "description": "Record a supplied receipt in this test; do not invent values.",
+        "name": "record_receipt",
+        "parameters": {
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "code",
+            "count"
+          ],
+          "type": "object"
+        },
+        "strict": true
+      },
+      "type": "function"
+    }
+  ],
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  }
+}

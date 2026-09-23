@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="561.6pt" viewBox="0 0 1008 561.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.6.3, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 561.6 
+L 1008 561.6 
+L 1008 0 
+L 0 0 
+z
+" style="fill: #11171b"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 206.64 370.656 
+L 690.48 370.656 
+L 690.48 162.864 
+L 206.64 162.864 
+z
+" style="fill: #11171b"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 206.64 370.656 
+L 206.64 162.864 
+" clip-path="url(#pc7546aa782)" style="fill: none; stroke: #35434b; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="fill: #abb8bd; font: 10px 'DejaVu Sans'; text-anchor: middle" x="206.64" y="388.254437" transform="rotate(-0 206.64 388.254437)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 320.484706 370.656 
+L 320.484706 162.864 
+" clip-path="url(#pc7546aa782)" style="fill: none; stroke: #35434b; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="fill: #abb8bd; font: 10px 'DejaVu Sans'; text-anchor: middle" x="320.484706" y="388.254437" transform="rotate(-0 320.484706 388.254437)">20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 434.329412 370.656 
+L 434.329412 162.864 
+" clip-path="url(#pc7546aa782)" style="fill: none; stroke: #35434b; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="fill: #abb8bd; font: 10px 'DejaVu Sans'; text-anchor: middle" x="434.329412" y="388.254437" transform="rotate(-0 434.329412 388.254437)">40</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 548.174118 370.656 
+L 548.174118 162.864 
+" clip-path="url(#pc7546aa782)" style="fill: none; stroke: #35434b; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="fill: #abb8bd; font: 10px 'DejaVu Sans'; text-anchor: middle" x="548.174118" y="388.254437" transform="rotate(-0 548.174118 388.254437)">60</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 662.018824 370.656 
+L 662.018824 162.864 
+" clip-path="url(#pc7546aa782)" style="fill: none; stroke: #35434b; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="fill: #abb8bd; font: 10px 'DejaVu Sans'; text-anchor: middle" x="662.018824" y="388.254437" transform="rotate(-0 662.018824 388.254437)">80</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="fill: #abb8bd; font: 12px 'DejaVu Sans'; text-anchor: middle" x="448.56" y="414.45225" transform="rotate(-0 448.56 414.45225)">End-to-end output tokens / second</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11"/>
+     <g id="text_7">
+      <text style="fill: #abb8bd; font: 15px 'DejaVu Sans'; text-anchor: end" x="196.64" y="225.233374" transform="rotate(-0 196.64 225.233374)">Native</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_12"/>
+     <g id="text_8">
+      <text style="fill: #abb8bd; font: 15px 'DejaVu Sans'; text-anchor: end" x="196.64" y="319.684283" transform="rotate(-0 196.64 319.684283)">DFlash K7</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 206.64 241.258255 
+L 307.960631 241.258255 
+L 307.960631 197.810836 
+L 206.64 197.810836 
+z
+" clip-path="url(#pc7546aa782)" style="fill: #90a0ab"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 206.64 335.709164 
+L 595.645262 335.709164 
+L 595.645262 292.261745 
+L 206.64 292.261745 
+z
+" clip-path="url(#pc7546aa782)" style="fill: #aad7cb"/>
+   </g>
+   <g id="text_9">
+    <text style="fill: #f2efe8; font: 700 19px 'DejaVu Sans'; text-anchor: start" x="319.345102" y="224.777358" transform="rotate(-0 319.345102 224.777358)">17.8</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #f2efe8; font: 700 19px 'DejaVu Sans'; text-anchor: start" x="607.029732" y="319.228267" transform="rotate(-0 607.029732 319.228267)">68.3</text>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="mb7022f7cdb" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #f2efe8; stroke-width: 0.6"/>
+    </defs>
+    <g clip-path="url(#pc7546aa782)">
+     <use xlink:href="#mb7022f7cdb" x="308.081726" y="219.534545" style="fill: #11171b; stroke: #f2efe8; stroke-width: 0.6"/>
+     <use xlink:href="#mb7022f7cdb" x="308.012374" y="219.534545" style="fill: #11171b; stroke: #f2efe8; stroke-width: 0.6"/>
+     <use xlink:href="#mb7022f7cdb" x="307.660269" y="219.534545" style="fill: #11171b; stroke: #f2efe8; stroke-width: 0.6"/>
+     <use xlink:href="#mb7022f7cdb" x="308.089384" y="219.534545" style="fill: #11171b; stroke: #f2efe8; stroke-width: 0.6"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <g clip-path="url(#pc7546aa782)">
+     <use xlink:href="#mb7022f7cdb" x="598.13903" y="313.985455" style="fill: #11171b; stroke: #f2efe8; stroke-width: 0.6"/>
+     <use xlink:href="#mb7022f7cdb" x="594.827704" y="313.985455" style="fill: #11171b; stroke: #f2efe8; stroke-width: 0.6"/>
+     <use xlink:href="#mb7022f7cdb" x="594.215539" y="313.985455" style="fill: #11171b; stroke: #f2efe8; stroke-width: 0.6"/>
+     <use xlink:href="#mb7022f7cdb" x="595.421782" y="313.985455" style="fill: #11171b; stroke: #f2efe8; stroke-width: 0.6"/>
+    </g>
+   </g>
+  </g>
+  <g id="text_11">
+   <text style="fill: #f2efe8; font: 700 25px 'DejaVu Sans'; text-anchor: start" x="65.52" y="50.544" transform="rotate(-0 65.52 50.544)">MiMo V2.6 Pro RL on eight DGX Sparks</text>
+  </g>
+  <g id="text_12">
+   <text style="fill: #abb8bd; font: 15px 'DejaVu Sans'; text-anchor: start" x="65.52" y="84.24" transform="rotate(-0 65.52 84.24)">DFlash K7 compared with native decoding</text>
+  </g>
+  <g id="text_13">
+   <text style="fill: #aad7cb; font: 700 40px 'DejaVu Sans'; text-anchor: start" x="761.04" y="185.328" transform="rotate(-0 761.04 185.328)">3.8×</text>
+  </g>
+  <g id="text_14">
+   <text style="fill: #abb8bd; font: 12px 'DejaVu Sans'; text-anchor: start" x="761.04" y="213.408" transform="rotate(-0 761.04 213.408)">long-task speedup</text>
+  </g>
+  <g id="text_15">
+   <text style="fill: #f2efe8; font: 700 28px 'DejaVu Sans'; text-anchor: start" x="761.04" y="286.416" transform="rotate(-0 761.04 286.416)">12/12</text>
+  </g>
+  <g id="text_16">
+   <text style="fill: #abb8bd; font: 12px 'DejaVu Sans'; text-anchor: start" x="761.04" y="308.88" transform="rotate(-0 761.04 308.88)">byte-identical answers</text>
+  </g>
+  <g id="text_17">
+   <text style="fill: #f2efe8; font: 12px 'DejaVu Sans'" transform="translate(761.04 343.251188)">Both modes passed</text>
+   <text style="fill: #f2efe8; font: 12px 'DejaVu Sans'" transform="translate(761.04 359.424)">6/8 short + 4/4 long tasks</text>
+  </g>
+  <g id="text_18">
+   <text style="fill: #f2efe8; font: 13px 'DejaVu Sans'; text-anchor: start" x="65.52" y="438.048" transform="rotate(-0 65.52 438.048)">Four long tasks · 1,829 output tokens each · one request at a time</text>
+  </g>
+  <g id="text_19">
+   <text style="fill: #abb8bd; font: 11px 'DejaVu Sans'; text-anchor: start" x="65.52" y="477.36" transform="rotate(-0 65.52 477.36)">Same patched runtime and official weights. Rate includes prefill and request overhead.</text>
+  </g>
+  <g id="text_20">
+   <text style="fill: #abb8bd; font: 10px 'DejaVu Sans'; text-anchor: start" x="65.52" y="502.632" transform="rotate(-0 65.52 502.632)">Dots show the four tasks. Timings overlapped work on another cohort; these are workload results, not isolated peaks.</text>
+  </g>
+  <g id="text_21">
+   <text style="fill: #abb8bd; font: 10px 'DejaVu Sans'; text-anchor: start" x="65.52" y="536.328" transform="rotate(-0 65.52 536.328)">AEVONIX RESEARCH  /  September 2026</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc7546aa782">
+   <rect x="206.64" y="162.864" width="483.84" height="207.792"/>
+  </clipPath>
+ </defs>
+</svg>

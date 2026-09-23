@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+cluster.json
+local-results/
+build/
+.env
+

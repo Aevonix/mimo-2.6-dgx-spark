@@ -1,0 +1,12 @@
+--- a/vllm/v1/worker/gpu/model_runner.py
++++ b/vllm/v1/worker/gpu/model_runner.py
+@@ -2352,3 +2352,9 @@
+         num,
+     )
+     return sorted(num_tokens_per_req, key=key)
++
++# Private, disabled-by-default synthetic MiMo trace. No model output changes.
++import os as _mimo_trace_os
++if _mimo_trace_os.environ.get("MIMO_SPEC_TRACE_CONFIG"):
++    from ._mimo_spec_trace import install as _mimo_trace_install
++    _mimo_trace_install(GPUModelRunner)

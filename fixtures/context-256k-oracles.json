@@ -1,0 +1,10 @@
+{
+  "7a5ed04fe6115eaceedb8aee13d77678af80cc65c0c2fc31d223b6abd962f401": {
+    "expected": {
+      "early": "amber-7139",
+      "late": "violet-9067",
+      "middle": "cobalt-4281"
+    },
+    "id": "mimo-capacity-262144"
+  }
+}

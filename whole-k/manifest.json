@@ -1,0 +1,33 @@
+{
+  "operator_namespace": "_mimo_marlin_whole_k_v1",
+  "original_sha256": {
+    "csrc/core/scalar_type.hpp": "8d3671759c43a0219f51e3a1f32c94ef5d70ecc99e264100f4015a781d94bb99",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/kernel.h": "f6991bdd8bf5d2c180ebcb8f20c23f58e8de2d1a60507475d41f61eed2ca1de6",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/marlin_template.h": "20972ba8eed8d6b3d3ff258dae7c495a5085197482fcd237bf72b3e5ff748c41",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/ops.cu": "edbfdfdeed22baf84547311f3e1922bb914cf56cdddc29eba3ac25f9c6fe1bf0",
+    "csrc/libtorch_stable/quantization/marlin/dequant.h": "39c4640d2de39374ef5d96e7fa27701a675922113c3f5b05d45369321090e728",
+    "csrc/libtorch_stable/quantization/marlin/marlin.cuh": "edaa19c541dfbe5e06e547c0be5bcdc1b78b4bbc68d596b72c41a932e2366926",
+    "csrc/libtorch_stable/quantization/marlin/marlin_dtypes.cuh": "15b90a65eadb200a3f7165e2e0d7d899f36d4993b20dbd89093ef2cea274da71",
+    "csrc/libtorch_stable/quantization/marlin/marlin_mma.h": "bf863d252bfc468eaff42b2c1bda583c5e6ab97ceacf0ac248c164564ddcce9b",
+    "csrc/libtorch_stable/torch_utils.h": "f619e1943039a67a3254f7e0679e1f3e0faa9d8fccae795f3b20df9e91a8a429"
+  },
+  "patched_sha256": {
+    "csrc/core/scalar_type.hpp": "8d3671759c43a0219f51e3a1f32c94ef5d70ecc99e264100f4015a781d94bb99",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/kernel.h": "1db67dc49ceaa72d74b21e43f7717a76defb1fb97df0d47856c76cf65429a899",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/kernel_selector.h": "af2c03387db81e93348011b0b2bc33c05936cf97514346ddd5cb56dd9b16ebf3",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/marlin_template.h": "22746c870c0e3c98a5ed67ea1c9cf529f5b1751b5466b9a092d98dd02cf9bf9c",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/ops.cu": "5aca3847d4f2ee6fa6dc049d8e086f8ceac264345b540236b12c8521725879ee",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/whole_k_m0_5.cu": "d21aa9375c2eeaeee1a47c7a182f6909ba0a509a54f48c93be0e99ae1f3ce120",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/whole_k_m1.cu": "4f81b07d5e239521adb059d25b9e091fed20bda8ea4ad14107c50a6c972c6d1e",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/whole_k_m2.cu": "74b117ddc7252df1960b45b47bd200b4d87786f9804f1b901b450fad2a4eee67",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/whole_k_m3.cu": "da3642adec765c6c76c2d172816323574a233a5f7b7a6edfbd1ab9e69a92119e",
+    "csrc/libtorch_stable/moe/marlin_moe_wna16/whole_k_m4.cu": "37439269096389638dbd1a79bebfce3947b148daeb21b45886268b840d88fba8",
+    "csrc/libtorch_stable/quantization/marlin/dequant.h": "39c4640d2de39374ef5d96e7fa27701a675922113c3f5b05d45369321090e728",
+    "csrc/libtorch_stable/quantization/marlin/marlin.cuh": "edaa19c541dfbe5e06e547c0be5bcdc1b78b4bbc68d596b72c41a932e2366926",
+    "csrc/libtorch_stable/quantization/marlin/marlin_dtypes.cuh": "15b90a65eadb200a3f7165e2e0d7d899f36d4993b20dbd89093ef2cea274da71",
+    "csrc/libtorch_stable/quantization/marlin/marlin_mma.h": "bf863d252bfc468eaff42b2c1bda583c5e6ab97ceacf0ac248c164564ddcce9b",
+    "csrc/libtorch_stable/torch_utils.h": "f619e1943039a67a3254f7e0679e1f3e0faa9d8fccae795f3b20df9e91a8a429"
+  },
+  "pin": "0961bbae2894d574be790d219651824eb199318e",
+  "specializations": 15
+}
